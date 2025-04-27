@@ -8,26 +8,44 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @State private var msg = "You are learnding swift."
-    
+
     var body: some View {
-        
+
         VStack {
+            Spacer()
+
             Image(.theSimpsonsLearnding)
-            .resizable()
+                .resizable()
                 .scaledToFit()
+            // frame is constraining the image, like a box
+                .frame(width: 200, height: 200)
             Text(msg)
                 .font(.title3)
                 .fontWeight(.semibold)
-                .foregroundStyle(.orange)
+                .foregroundStyle(.black)
+
+            Spacer()
+            
             // when button is pressed, the code inside the curly braces will excute
-            Button("Click Me!") {
-                msg = "Awesome!"
-            }.buttonStyle(.borderedProminent)
+            HStack {
+                Button("Awesome!") {
+                    msg = "Awesome!"
+                }
+                .tint(.orange)
+                
+                Button("Great!") {
+                    msg = "Great!"
+                }
+                .tint(.blue)
+            }
+            .buttonStyle(.borderedProminent)
+            .font(.title3)
+
         }
         .padding()
-        
+
     }
 }
 #Preview {
