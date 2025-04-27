@@ -24,7 +24,7 @@ struct ContentView: View {
             Text(msg)
                 .font(.title3)
                 .fontWeight(.semibold)
-                .foregroundStyle(.black)
+//                .foregroundStyle(.tint)
 
             Spacer()
             
